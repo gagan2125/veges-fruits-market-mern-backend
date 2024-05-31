@@ -16,9 +16,8 @@ mongoose
   .catch((err) => console.log(err));
 
 app.get("/api/products", async (req, res) => {
-  // Marked the route handler as async
   try {
-    const allProducts = await Product.find(); // Await the result of Product.find()
+    const allProducts = await Product.find();
     res.json(allProducts);
   } catch (error) {
     console.error(error);
