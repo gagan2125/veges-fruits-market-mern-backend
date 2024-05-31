@@ -10,9 +10,7 @@ app.use(express.json());
 
 const startServer = async () => {
   try {
-    await mongoose.connect(
-      "mongodb+srv://crackmack16:YUgxJjwo8NXpscZl@cluster0.xyeoecj.mongodb.net/vegeproduct?retryWrites=true&w=majority"
-    );
+    await mongoose.connect(process.env.MONGO_URL);
     console.log("Database Connected");
 
     app.get("/api/products", async (req, res) => {
