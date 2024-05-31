@@ -10,7 +10,9 @@ app.use(express.json());
 
 const startServer = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URL);
+    await mongoose.connect(
+      "mongodb+srv://crackmack16:YUgxJjwo8NXpscZl@cluster0.xyeoecj.mongodb.net/vegeproduct?retryWrites=true&w=majority"
+    );
     console.log("Database Connected");
 
     app.get("/api/products", async (req, res) => {
@@ -34,3 +36,6 @@ const startServer = async () => {
 };
 
 startServer();
+
+// Export the app object
+module.exports = app;
