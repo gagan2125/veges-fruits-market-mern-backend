@@ -30,7 +30,7 @@ mongoose
 //   }
 // });
 
-app.get("/api/test", async (req, res) => {
+app.get("/api/test", (req, res) => {
   try {
     console.log("Test is Running");
   } catch (error) {
