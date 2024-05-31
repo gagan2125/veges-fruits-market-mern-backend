@@ -30,8 +30,10 @@ mongoose
 app.get("/api/test", (req, res) => {
   try {
     console.log("Test is Running");
+    res.send("Test route is working"); // Sending a response back to the client
   } catch (error) {
     console.error("Error:", error);
+    res.status(500).send("Internal Server Error"); // Sending an error response if something goes wrong
   }
 });
 
