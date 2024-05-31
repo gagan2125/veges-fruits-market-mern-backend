@@ -18,15 +18,23 @@ mongoose
   })
   .catch((err) => console.log(err));
 
-app.get("/api/products", async (req, res) => {
+// app.get("/api/products", async (req, res) => {
+//   try {
+//     const allProducts = await Product.find();
+//     res.json(allProducts);
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({
+//       error: "Internal Server Error",
+//     });
+//   }
+// });
+
+app.get("/api/test", async (req, res) => {
   try {
-    const allProducts = await Product.find();
-    res.json(allProducts);
+    console.log("Test is Running");
   } catch (error) {
-    console.error(error);
-    res.status(500).json({
-      error: "Internal Server Error",
-    });
+    console.error("Error:", error);
   }
 });
 
