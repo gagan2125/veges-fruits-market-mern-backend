@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const Product = require("./models/ProductSchems");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -13,16 +14,6 @@ mongoose
     console.log("Database Connected");
   })
   .catch((err) => console.log(err));
-
-// // MongoDB Schema
-const productSchema = new mongoose.Schema({
-  name: String,
-  type: String,
-  description: String,
-  price: String,
-  image: String,
-});
-const Product = mongoose.model("Product", productSchema);
 
 // // initial data
 const seedDatabase = async () => {
